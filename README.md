@@ -52,7 +52,7 @@ extern CFArrayRef CPBitmapCreateImagesFromData(CFDataRef cpbitmap, void*, int, v
  	NSData* lockWallpaperData = [NSData dataWithContentsOfFile:@"/var/mobile/Library/SpringBoard/LockBackground.cpbitmap"];
 	CFDataRef lockWallpaperDataRef = (__bridge CFDataRef)lockWallpaperData;
 	NSArray* imageArray = (__bridge NSArray *)CPBitmapCreateImagesFromData(lockWallpaperDataRef, NULL, 1, NULL);
-	wallpaper = [UIImage imageWithCGImage:(CGImageRef)imageArray[0]];
+	UIImage* wallpaper = [UIImage imageWithCGImage:(CGImageRef)imageArray[0]];
 
  	// get the color and set it
  	[self setTextColor:[nena secondaryColor:wallpaper]];
